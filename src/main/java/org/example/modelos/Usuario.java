@@ -1,6 +1,8 @@
 package org.example.modelos;
 
 
+import org.example.validaciones.UsuarioValidacion;
+
 public class Usuario{
 
     //ATRIBUTOS=VARIABLES=DATOS
@@ -9,6 +11,8 @@ public class Usuario{
     private String documento;
     private Integer ubicacion;
     private String correoElectronico;
+
+    private UsuarioValidacion validacion=new UsuarioValidacion();
 
 
 
@@ -40,7 +44,13 @@ public class Usuario{
     }
 
     public void setNombres(String nombres) {
-        this.nombres = nombres;
+        try{
+            this.validacion.validarNombres(nombres);
+            this.nombres=nombres;
+        }catch(Exception error){
+            System.out.println(error.getMessage());
+        }
+
     }
 
     public String getDocumento() {
