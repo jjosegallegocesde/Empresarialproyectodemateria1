@@ -87,6 +87,17 @@ public class Usuario{
         }
     }
 
+    @Override
+    public String toString() {
+        return "Usuario-" +
+                ", nombres='" + nombres + '\'' +
+                ", documento='" + documento + '\'' +
+                ", ubicacion=" + ubicacion +
+                ", correoElectronico='" + correoElectronico + '\'' +
+                ", validacion=" + validacion +
+                '}';
+    }
+
     //METODOS ORDINARIOS
 
 
